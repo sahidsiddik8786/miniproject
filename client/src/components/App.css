@@ -1,0 +1,225 @@
+/* HomePage.css */
+
+/* HomePage.css */
+.homepage {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.header {
+  background-color: #282928;
+  color: white;
+  padding: 20px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero {
+  
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.about,
+.contact {
+  background-color: #f7f7f7;
+  padding: 80px 0;
+}
+
+.about-content,
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h3,
+.contact h3 {
+  font-size: 24px;
+}
+
+.about p,
+.contact p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Footer.css */
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left {
+  flex: 1;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo h1 {
+  font-size: 24px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.newsletter h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.additional-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.legal-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.back-to-top {
+  background-color: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Add responsive styles as needed */
+
+/* App.css */
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://images.pexels.com/photos/2387624/pexels-photo-2387624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Replace 'your-image-url.jpg' with your actual image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.log-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/911/964/desktop-wallpaper-50-innovative-design-ideas-mansion-interior.jpg'); /* Replace 'your-image-url.jpg' with your actual image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Add this CSS to your stylesheet */
+.navbar-nav {
+  display: flex;
+  flex-direction: row; /* Arrange the links horizontally */
+  justify-content: flex-end; /* Align links to the right side */
+  margin-right: 0; /* Remove the default margin */
+}
+
+.navbar-nav li {
+  margin-left: 20px; /* Add spacing between links (adjust as needed) */
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: #f9f8f8; /* Link text color */
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.navbar-nav a:hover {
+  color: #050505f6; /* Change link color on hover (adjust as needed) */
+}
