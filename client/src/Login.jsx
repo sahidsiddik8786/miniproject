@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import Header from './components/Header'
-import Footer from './components/Footer'
-
+import Layout from "./components/Layout";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
+    const [error, setError] = useState("");
     const navigate = useNavigate();
 
     const validateEmail = (email) => {
@@ -22,40 +21,27 @@ function Login() {
         return password.length >= 6;
     }
 
-    const handleEmailChange = (e) => {
-        const inputEmail = e.target.value;
-        setEmail(inputEmail);
-
-        if (!validateEmail(inputEmail)) {
-            setEmailError("Invalid email address");
-        } else {
-            setEmailError("");
-        }
-    }
-
-    const handlePasswordChange = (e) => {
-        const inputPassword = e.target.value;
-        setPassword(inputPassword);
-
-        if (!validatePassword(inputPassword)) {
-            setPasswordError("Password must be at least 6 characters long");
-        } else {
-            setPasswordError("");
-        }
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!validateEmail(email) || !validatePassword(password)) {
+        if (!validateEmail(email)) {
+            setError("Invalid email address");
             return;
         }
+
+        if (!validatePassword(password)) {
+            setError("Password must be at least 6 characters long");
+            return;
+        }
+
+        // Clear any previous error messages
+        setError("");
 
         axios.post('http://localhost:3001/login', { email, password })
         .then(result => {
             console.log(result);
             if (result.data === "Success") {
-                navigate('/Userhome');
+                navigate('/home');
             }
         })
         .catch(err => console.log(err));
@@ -67,17 +53,16 @@ function Login() {
         <div className="w-50 bg-white rounded p-3">
                 <form onSubmit={handleSubmit}>
                     <h2>Log In</h2>
-                    {emailError && <div className="alert alert-danger">{emailError}</div>}
-                    {passwordError && <div className="alert alert-danger">{passwordError}</div>}
+                    {error && <div className="alert alert-danger">{error}</div>}
                     <div className="mb-2">
                         <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
                             placeholder="Enter email"
-                            className={`form-control ${emailError ? "is-invalid" : ""}`}
+                            className="form-control"
                             value={email}
-                            onChange={handleEmailChange}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className="mb-2">
@@ -86,17 +71,21 @@ function Login() {
                             type="password"
                             id="password"
                             placeholder="Enter Password"
-                            className={`form-control ${passwordError ? "is-invalid" : ""}`}
+                            className="form-control"
                             value={password}
-                            onChange={handlePasswordChange}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
+                        
                     </div>
                     <button className="btn btn-success w-100">Login</button>
                     <p>Don't have an account?</p>
                     <Link to="/register" className="btn btn-default border w-100 big-light rounded-0">
-                        Create a new account
+                        Create new account
                     </Link>
                 </form>
+                <button  className="btn btn-danger w-100 mt-3">
+                        Logout
+                    </button>
             </div>
         </div>
         </div>
