@@ -45,7 +45,7 @@ function Header() {
     rel="stylesheet"
   />
   <header>
-    <a className="navbar-brand page-scroll" href="Homepage">
+    <a className="navbar-brand page-scroll" href="">
             NEST
           </a>
     {/* Header Section */}
@@ -53,8 +53,8 @@ function Header() {
   <div className="container">
     <ul className="nav navbar-nav" style={{ display: 'flex', justifyContent: 'flex-start' }}>
       <li>
-        <a href="#about" className="page-scroll">
-          About
+      <a href="#about" className="page-scroll">
+         About
         </a>
       </li>
       <li>
@@ -79,12 +79,12 @@ function Header() {
       </li>
       <li>
         <a href="/register" className="page-scroll">
-          Signup
+          Sign-up
         </a>
       </li>
       <li>
         <a href="login" className="page-scroll">
-          Login
+          Sign-in
         </a>
       </li>
     </ul>
@@ -92,9 +92,7 @@ function Header() {
 </section>
 
   </header>
-  {/* Rest of your HTML content goes here */}
-  {/* Scripts and JavaScript files here */}
-  {/* You can include your JavaScript files and scripts here */}
+
 </>
 
     </div>
